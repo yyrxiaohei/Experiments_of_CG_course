@@ -1,4 +1,4 @@
-# src/Work0/physics.py
+# src/Work1/physics.py
 import taichi as ti
 from .config import *
 

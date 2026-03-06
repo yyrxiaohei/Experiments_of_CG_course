@@ -1,4 +1,4 @@
-# src/Work0/main.py
+# src/Work1/main.py
 import taichi as ti
 
 # 注意：初始化必须在最前面执行，接管底层 GPU

@@ -1,4 +1,4 @@
-# src/Work0/config.py
+# src/Work1/config.py
 
 # --- 物理系统参数 ---
 NUM_PARTICLES = 10000      # 粒子总数 (卡顿请调小此数值，如 2000)
