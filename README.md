@@ -74,11 +74,11 @@ $\downarrow$
 
 改变粒子数量（从左到右`NUM_PARTICLES`依次为1000、5000、10000）：
 
-<img src="images/NUM_PARTICLES_1000.gif" width="30%"> <img src="images/NUM_PARTICLES_5000.gif.gif" width="30%"> <img src="images/NUM_PARTICLES_10000.gif" width="30%">
+<img src="images/NUM_PARTICLES_1000.gif" width="30%"> <img src="images/NUM_PARTICLES_5000.gif" width="30%"> <img src="images/NUM_PARTICLES_10000.gif" width="30%">
 
 改变引力强度（从左到右`GRAVITY_STRENGTH`依次为0.0001、0.001、0.01）：
 
-<img src="images/GRAVITY_STRENGTH_0.0001.gif" width="30%"> <img src="images/NUM_PARTICLES_5000.gif.gif" width="30%"> <img src="images/GRAVITY_STRENGTH_0.01.gif" width="30%">
+<img src="images/GRAVITY_STRENGTH_0.0001.gif" width="30%"> <img src="images/NUM_PARTICLES_5000.gif" width="30%"> <img src="images/GRAVITY_STRENGTH_0.01.gif" width="30%">
 
 以及其他参数调整（左`PARTICLE_RADIUS`为3，右`PARTICLE_COLOR`为`0x00BFFF`）：
 
