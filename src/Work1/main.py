@@ -12,7 +12,7 @@ def run():
     print("正在编译 GPU 内核，请稍候...")
     init_particles()
     
-    gui = ti.GUI("Experiment 0: Taichi Gravity Swarm", res=WINDOW_RES)
+    gui = ti.GUI("Experiment 1: Taichi Gravity Swarm", res=WINDOW_RES)
     print("编译完成！请在弹出的窗口中移动鼠标。")
     
     # 渲染主循环
