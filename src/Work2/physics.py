@@ -6,7 +6,7 @@ from .config import *
 # 1 数据定义
 vertices = ti.Vector.field(SPATIAL_DIMENSION, dtype=ti.f32, shape=VERTICE_NUM)  # 三维坐标
 screen_coords = ti.Vector.field(2, dtype=ti.f32, shape=VERTICE_NUM)  # 屏幕投影坐标
-angle = 0.0  # 当前旋转角
+angle = 0.0  # 当前旋转角，初始值为0
 
 # 2 三大矩阵变换函数定义
 
@@ -41,12 +41,12 @@ def update_coordinates(angle: ti.f32):
     坐标变换并行计算
     '''
     # 相机位置设置
-    eye_pos = ti.Vector([0.0, 0.0, 5.0])
+    eye_pos = ti.Vector([EYE_POS_X, EYE_POS_Y, EYE_POS_Z])
     
     # 计算 MVP 矩阵（模型变换 -> 观察变换 -> 投影变换）
     model = get_model_matrix(angle)  # M 矩阵，模型变换
     view = get_view_matrix(eye_pos)  # V 矩阵，观察变换
-    proj = get_projection_matrix(45.0, 1.0, 0.1, 50.0)  # P 矩阵，投影变换
+    proj = get_projection_matrix(EYE_FOV, ASPECT_RATIO, Z_NEAR, Z_FAR)  # P 矩阵，投影变换
     mvp = proj @ view @ model  # 合成 MVP 矩阵
 
     # 对图形的每个顶点独立执行 MVP 变换
