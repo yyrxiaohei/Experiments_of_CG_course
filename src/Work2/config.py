@@ -1,16 +1,16 @@
 # src/Work2/config.py
 from re import ASCII
 
-WINDOW_RES = (700, 700)  # 窗口分辨率
+WINDOW_RES = (700, 700)
 
 # 图形维度参数
-VERTICE_NUM = 3  # 图形顶点数（3为三角形，4为四边形，以此类推）
-SPATIAL_DIMENSION = 3  # 真实空间维度
+VERTICE_NUM = 3
+SPATIAL_DIMENSION = 3
 
 # 相机位置参数
 EYE_POS_X = 0.0
 EYE_POS_Y = 0.0
-EYE_POS_Z = 0.5
+EYE_POS_Z = 5.0
 
 # 投影矩阵参数
 EYE_FOV = 45.0  # 视野大小

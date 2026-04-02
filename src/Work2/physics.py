@@ -44,49 +44,43 @@ def get_view_matrix(eye_pos):
 
 @ti.func
 def get_projection_matrix(eye_fov: ti.f32, aspect_ratio: ti.f32, zNear: ti.f32, zFar: ti.f32):
-    '''
+    ''' 
     投影变换（P矩阵）
-        接收视场角（Y 轴方向，角度制）、屏幕长宽比、近截面距离和远截面距离，返回透视投影矩阵
+        接收视场角（Y 轴方向，角度制）、屏幕长宽比、近截面距离和远截面距离
+        返回透视投影矩阵
     '''
-    # 视线看向 -Z 轴，实际坐标为负
-    n = -zNear
-    f = -zFar
-    
-    # 视角转化为弧度并求出 t, b, r, l
+    n = zNear
+    f = zFar
+
     fov_rad = eye_fov * math.pi / 180.0
-    t = ti.tan(fov_rad / 2.0) * ti.abs(n)
+
+    t = ti.tan(fov_rad / 2.0) * n
     b = -t
-    r = aspect_ratio * t
+    r = t * aspect_ratio
     l = -r
-    
-    # 1. 挤压矩阵: 透视平截头体 -> 长方体
+
     M_p2o = ti.Matrix([
         [n, 0.0, 0.0, 0.0],
         [0.0, n, 0.0, 0.0],
         [0.0, 0.0, n + f, -n * f],
         [0.0, 0.0, 1.0, 0.0]
     ])
-    
-    # 2. 正交投影矩阵: 缩放与平移至 [-1, 1]^3
+
     M_ortho_scale = ti.Matrix([
         [2.0 / (r - l), 0.0, 0.0, 0.0],
         [0.0, 2.0 / (t - b), 0.0, 0.0],
         [0.0, 0.0, 2.0 / (n - f), 0.0],
         [0.0, 0.0, 0.0, 1.0]
     ])
-    
+
     M_ortho_trans = ti.Matrix([
         [1.0, 0.0, 0.0, -(r + l) / 2.0],
         [0.0, 1.0, 0.0, -(t + b) / 2.0],
         [0.0, 0.0, 1.0, -(n + f) / 2.0],
         [0.0, 0.0, 0.0, 1.0]
     ])
-    
-    M_ortho = M_ortho_scale @ M_ortho_trans
-    
-    # 返回组合矩阵
-    return M_ortho @ M_p2o
 
+    return M_ortho_scale @ M_ortho_trans @ M_p2o
 
 # ====== 3 核心内核定义 ======
 
