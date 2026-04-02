@@ -95,3 +95,5 @@ uv run -m src.Work2.main
 # 4. 效果展示
 
 下面是项目的执行效果展示：
+
+![Operation demonstration of the initial version](./images/Work2_InitialVersion.gif)
