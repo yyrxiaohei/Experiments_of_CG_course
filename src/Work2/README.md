@@ -97,3 +97,9 @@ uv run -m src.Work2.main
 下面是项目的执行效果展示：
 
 ![Operation demonstration of the initial version](./images/Work2_InitialVersion.gif)
+
+通过调整`config.py`中的独立出的参数，可实现不同的视觉效果。例如：
+
+改变相机位置（从左到右`EYE_POS_Z`依次为5、10、20）：
+
+<img src="images/EYE_POS_Z_5.gif" width="30%"> <img src="images/EYE_POS_Z_10.gif" width="30%"> <img src="images/EYE_POS_Z_20.gif" width="30%">

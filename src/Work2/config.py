@@ -10,7 +10,7 @@ SPATIAL_DIMENSION = 3
 # 相机位置参数
 EYE_POS_X = 0.0
 EYE_POS_Y = 0.0
-EYE_POS_Z = 5.0
+EYE_POS_Z = 20.0
 
 # 投影矩阵参数
 EYE_FOV = 45.0  # 视野大小
