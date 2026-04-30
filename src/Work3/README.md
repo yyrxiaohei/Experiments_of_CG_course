@@ -1,3 +1,5 @@
+作业完成度说明：完成了“必做+选做”两部分的完整实验，包括了曲线的光栅化绘制、反走样增强、B 样条曲线绘制等功能。
+
 # 1. 项目架构
 
 Work3 相关项目目录结构如下：
@@ -88,4 +90,16 @@ $\downarrow$
 
 ![Operation demonstration of the initial version](./images/Work3_InitialVersion.gif)
 
-通过调整`config.py`中的参数，可实现不同的物理效果。例如：
+通过调整`config.py`中的参数，可实现不同的曲线绘制效果。例如：
+
+改变曲线采样数量（从左到右`NUM_SEGMENTS`依次为100、500、1000），可观察曲线由粗糙折线逐渐变得平滑：
+
+<img src="images/Work3_NUM_SEGMENTS_100.gif" width="30%"> <img src="images/Work3_NUM_SEGMENTS_500.gif" width="30%"> <img src="images/Work3_NUM_SEGMENTS_1000.gif" width="30%">
+
+改变反走样开关（左`ENABLE_ANTI_ALIASING = False`，右`ENABLE_ANTI_ALIASING = True`），可观察曲线边缘平滑程度的变化：
+
+<img src="images/Work3_NUM_SEGMENTS_1000.gif" width="45%"> <img src="images/Work3_AA_On.gif" width="45%">
+
+改变曲线模式（左为 Bézier 曲线模式，右为 Uniform Cubic B-Spline 曲线模式），可观察两类曲线在相同控制点下的形态差异：
+
+<img src="images/Work3_Bezier_Mode.gif" width="45%"> <img src="images/Work3_AA_On.gif" width="45%">

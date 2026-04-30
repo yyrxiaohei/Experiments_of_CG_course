@@ -33,7 +33,7 @@ CONTROL_POLYGON_WIDTH = 0.002
 
 # False：基础光栅化，只点亮单个像素；
 # True ：选做增强，点亮 3x3 邻域并按距离衰减混合颜色。
-ENABLE_ANTI_ALIASING = False
+ENABLE_ANTI_ALIASING = True
 
 # 反走样影响半径，单位为像素
 ANTI_ALIASING_RADIUS = 1.5
@@ -50,5 +50,5 @@ HIDDEN_POS = -10.0
 
 # 7 曲线模式
 
-MODE_BEZIER = 0
-MODE_BSPLINE = 1
+MODE_BEZIER = 1
+MODE_BSPLINE = 0
