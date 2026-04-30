@@ -11,3 +11,6 @@ wheels/
 
 # VSCode files
 .vscode/*
+
+# Local GUI layout cache
+imgui.ini
