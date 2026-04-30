@@ -86,4 +86,6 @@ $\downarrow$
 
 下面是项目的执行效果展示：
 
+![Operation demonstration of the initial version](./images/Work3_InitialVersion.gif)
+
 通过调整`config.py`中的参数，可实现不同的物理效果。例如：
