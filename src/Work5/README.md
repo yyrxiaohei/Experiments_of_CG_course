@@ -84,14 +84,14 @@ $\downarrow$
 
 （1）改变点光源位置（从左到右分别调整Light X、Light Y、Light Z）：
 
-<img src="images/Work5_Light_X.gif" width="30%"> <img src="images/Work5_Light_Y.gif" width="30%"> <img src="images/Work5_Light_Z.gif" width="30%">
+<img src="images/Work5_Light_X.png" width="30%"> <img src="images/Work5_Light_Y.png" width="30%"> <img src="images/Work5_Light_Z.png" width="30%">
 
 （2）改变最大弹射次数（左Max Bounces = 1，右Max Bounces = 3）：
 - 当Max Bounces = 1时，光线在第一次击中镜面球后不会继续产生有效反射，因此镜面反射效果不明显；当Max Bounces增大后，反射射线能够继续追踪场景，银色镜面球中会出现地面或其他物体的反射结果。
 
-<img src="images/Work5_Max_Bounces_1.gif" width="45%"> <img src="images/Work5_Max_Bounces_3.gif" width="45%">
+<img src="images/Work5_Max_Bounces_1.png" width="45%"> <img src="images/Work5_Max_Bounces_3.png" width="45%">
 
 （3）硬阴影效果展示：
 - 随着点光源位置变化，红色漫反射球和银色镜面球在棋盘格地面上的阴影会同步移动，体现暗影射线遮挡检测的作用。
 
-<img src="images/Work5_Hard_Shadow.gif" width="45%">
+<img src="images/Work5_Hard_Shadow.png" width="45%">

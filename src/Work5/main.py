@@ -2,7 +2,6 @@
 
 import taichi as ti
 
-# 注意：初始化必须在最前面执行，接管底层 GPU
 ti.init(arch=ti.gpu)
 
 from .config import *
@@ -25,14 +24,13 @@ def main():
     light_z = DEFAULT_LIGHT_Z
     max_bounces = DEFAULT_MAX_BOUNCES
 
-    # 先渲染一帧，触发 Taichi Kernel 编译
     render(light_x, light_y, light_z, max_bounces)
 
     print("编译完成！")
-    print("可通过右侧 UI 面板调节点光源位置与最大弹射次数。")
+    print("可通过左上角 UI 面板调节点光源位置与最大弹射次数。")
 
     while window.running:
-        with gui.sub_window("Ray Tracing Parameters", 16, 16, 300, 220):
+        with gui.sub_window("Ray Tracing Parameters", 0.02, 0.02, 0.32, 0.28):
             light_x = gui.slider_float("Light X", light_x, -6.0, 6.0)
             light_y = gui.slider_float("Light Y", light_y, 0.5, 8.0)
             light_z = gui.slider_float("Light Z", light_z, -6.0, 6.0)
@@ -44,7 +42,7 @@ def main():
                 MAX_MAX_BOUNCES
             )
 
-            gui.text("Max Bounces = 1: almost no mirror reflection")
+            gui.text("Max Bounces = 1: no visible mirror reflection")
             gui.text("Max Bounces > 1: reflected world appears")
 
         render(light_x, light_y, light_z, max_bounces)
