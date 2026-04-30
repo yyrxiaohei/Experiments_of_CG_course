@@ -117,6 +117,6 @@ d. 改变高光指数（从左到右`Shininess`依次为8、32、96）：
 <img src="images/Work4_InitialVersion.png" width="45%"> <img src="images/Work4_BlinnPhong.png" width="45%">
 
 （3）开启硬阴影功能（左为关闭硬阴影，右为开启硬阴影）：
-- 开启硬阴影后，被其他物体遮挡的区域只保留环境光，物体之间的空间遮挡关系更加明显。
+- 开启硬阴影后，球体左下侧及圆锥靠近球体一侧的暗部区域略有加深，说明遮挡判断开始参与光照计算；但由于当前两个物体间距较大、光源位置较高，阴影范围并不明显，整体画面差异相对较弱。
 
 <img src="images/Work4_InitialVersion.png" width="45%"> <img src="images/Work4_Shadow_On.png" width="45%">
