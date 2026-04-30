@@ -61,4 +61,4 @@ ENABLE_BLINN_PHONG = False
 
 # False：不计算阴影
 # True ：开启硬阴影，阴影区域只保留环境光
-ENABLE_HARD_SHADOW = False
+ENABLE_HARD_SHADOW = True

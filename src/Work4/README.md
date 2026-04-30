@@ -84,44 +84,39 @@ $\downarrow$
 
 
 # 4. 效果展示
-<!-- 
+
 下面是项目的执行效果展示：
 
 ![Operation demonstration of the initial version](./images/Work4_InitialVersion.gif)
 
-通过调整`config.py`中的参数，或在运行窗口中拖动 UI 滑动条，可实现不同的光照渲染效果。例如：
+（1）通过调整`config.py`中的参数，或在运行窗口中拖动 UI 滑动条，可实现不同的光照渲染效果。例如：
 
-改变环境光系数（从左到右`Ka`依次为0.05、0.20、0.60）：
+a. 改变环境光系数（从左到右`Ka`依次为0.05、0.20、0.60）：
+- `Ka`较小时，背光区域更暗，物体明暗对比更强；`Ka`较大时，整体亮度提高，暗部细节更明显，但立体感会相对减弱。
 
-<img src="images/Work4_Ka_0.05.gif" width="30%"> <img src="images/Work4_InitialVersion.gif" width="30%"> <img src="images/Work4_Ka_0.60.gif" width="30%">
+<img src="images/Work4_Ka_0.05.png" width="30%"> <img src="images/Work4_InitialVersion.png" width="30%"> <img src="images/Work4_Ka_0.60.png" width="30%">
 
-`Ka`较小时，背光区域更暗，物体明暗对比更强；`Ka`较大时，整体亮度提高，暗部细节更明显，但立体感会相对减弱。
+b. 改变漫反射系数（从左到右`Kd`依次为0.20、0.70、1.00）：
+- `Kd`较小时，物体受光面的亮度变化不明显；`Kd`增大后，受光面更亮，球体和圆锥的体积感更加突出。
 
-改变漫反射系数（从左到右`Kd`依次为0.20、0.70、1.00）：
+<img src="images/Work4_Kd_0.20.png" width="30%"> <img src="images/Work4_InitialVersion.png" width="30%"> <img src="images/Work4_Kd_1.00.png" width="30%">
 
-<img src="images/Work4_Kd_0.20.gif" width="30%"> <img src="images/Work4_InitialVersion.gif" width="30%"> <img src="images/Work4_Kd_1.00.gif" width="30%">
+c. 改变镜面高光系数（从左到右`Ks`依次为0.00、0.50、1.00）：
+- `Ks`为0时，物体表面几乎没有高光，更接近粗糙材质；`Ks`增大后，高光亮斑更加明显，表面光滑感增强。
 
-`Kd`较小时，物体受光面的亮度变化不明显；`Kd`增大后，受光面更亮，球体和圆锥的体积感更加突出。
+<img src="images/Work4_Ks_0.00.png" width="30%"> <img src="images/Work4_InitialVersion.png" width="30%"> <img src="images/Work4_Ks_1.00.png" width="30%">
 
-改变镜面高光系数（从左到右`Ks`依次为0.00、0.50、1.00）：
+d. 改变高光指数（从左到右`Shininess`依次为8、32、96）：
+- `Shininess`较小时，高光范围较大且边缘较柔和；`Shininess`较大时，高光区域更集中，物体表面呈现更强的光滑反射效果。
 
-<img src="images/Work4_Ks_0.00.gif" width="30%"> <img src="images/Work4_InitialVersion.gif" width="30%"> <img src="images/Work4_Ks_1.00.gif" width="30%">
+<img src="images/Work4_Shininess_8.png" width="30%"> <img src="images/Work4_InitialVersion.png" width="30%"> <img src="images/Work4_Shininess_96.png" width="30%">
 
-`Ks`为0时，物体表面几乎没有高光，更接近粗糙材质；`Ks`增大后，高光亮斑更加明显，表面光滑感增强。
+（2）尝试 Phong 模型和 Blinn-Phong 模型两种不同的模型（左为标准 Phong 模型，右为 Blinn-Phong 模型）：
+- Blinn-Phong 使用半程向量计算高光，相比标准 Phong 模型，高光边缘通常更加稳定、平滑。
 
-改变高光指数（从左到右`Shininess`依次为8、32、96）：
+<img src="images/Work4_InitialVersion.png" width="45%"> <img src="images/Work4_BlinnPhong.png" width="45%">
 
-<img src="images/Work4_Shininess_8.gif" width="30%"> <img src="images/Work4_InitialVersion.gif" width="30%"> <img src="images/Work4_Shininess_96.gif" width="30%">
-
-`Shininess`较小时，高光范围较大且边缘较柔和；`Shininess`较大时，高光区域更集中，物体表面呈现更强的光滑反射效果。
-
-尝试 Phong 模型和 Blinn-Phong 模型两种不同的模型（左为标准 Phong 模型，右为 Blinn-Phong 模型）：
-
-<img src="images/Work4_Phong.gif" width="45%"> <img src="images/Work4_BlinnPhong.gif" width="45%">
-
-Blinn-Phong 使用半程向量计算高光，相比标准 Phong 模型，高光边缘通常更加稳定、平滑。
-
-开启硬阴影功能（左为关闭硬阴影，右为开启硬阴影）：
+（3）开启硬阴影功能（左为关闭硬阴影，右为开启硬阴影）：
 - 开启硬阴影后，被其他物体遮挡的区域只保留环境光，物体之间的空间遮挡关系更加明显。
 
-<img src="images/Work4_Shadow_Off.gif" width="45%"> <img src="images/Work4_Shadow_On.gif" width="45%"> -->
+<img src="images/Work4_InitialVersion.png" width="45%"> <img src="images/Work4_Shadow_On.png" width="45%">
