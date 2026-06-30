@@ -14,3 +14,7 @@ wheels/
 
 # Local GUI layout cache
 imgui.ini
+
+# SMPL model files: downloaded separately under the official license
+src/Work8/models/smpl/*.pkl
+src/Work8/models/smpl/*.npz
